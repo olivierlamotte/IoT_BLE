@@ -1,0 +1,32 @@
+#ifndef _COMMAND_PARSER_H_
+#define _COMMAND_PARSER_H_
+
+#include <string.h>
+
+enum COMMAND {
+	LOGIN,
+	LOGOUT,
+	GET_LOG_STATUS,
+	START_ADVERTISE,
+	STOP_ADVERTISE,
+	GET_ADVERTISE_STATUS,
+	RESET,
+	DISCONNECT,
+	CHANGE_PASSWORD,
+	ALLOW_CONNECTION,
+	FORBID_CONNECTION,
+	GET_CONNECTION_STATUS,
+	CHANGE_DEVICE_NAME,
+	GET_DEVICE_NAME,
+	UNKNOWN_COMMAND
+};
+
+class CommandParser{
+
+public:
+	CommandParser();
+	virtual ~CommandParser();
+	COMMAND parseCommand(char* str);
+};
+
+#endif /* _COMMAND_PARSER_H_ */
